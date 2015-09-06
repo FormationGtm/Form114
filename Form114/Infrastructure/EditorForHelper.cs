@@ -64,11 +64,23 @@ namespace Form114.Infrastructure
             a += "<label for=\"amount\">Prix:</label>";
             a += "<input type=\"text\" id=\"amount\" readonly style=\"border:0; color:#f6931f; font-weight:bold; width:300px \">";
             a += "</p>";
-            a += "<div id=" + slider + " class=\"col-lg-4\"></div>";
+            a += "<div id=" + slider + " class=\"col-xs-5\"></div>";
             a += "<input type=\"hidden\" id=\"prixmini\" name=\"PrixMini\" value=\"prixmini\" />";
             a += "<input type=\"hidden\" id=\"prixmaxi\" name=\"PrixMaxi\" value=\"prixmaxi\" />";
             a += "</br>";
             return new MvcHtmlString(a);
+        }
+
+        public static MvcHtmlString ListeVilleIndex(this HtmlHelper self)
+        {
+            string str = "";
+            str += "<fieldset>";
+            str += "<div class=\"container\">";
+            str += "<select id=\"Ville\" name=\"Ville\" style=\"position : absolute;\" class=\"chosen-select form-control\" multiple></select>";
+            str += "</div>";
+            str += "</fieldset>";
+
+            return new MvcHtmlString(str);
         }
 
         public static MvcHtmlString ListeVille(this HtmlHelper helper)

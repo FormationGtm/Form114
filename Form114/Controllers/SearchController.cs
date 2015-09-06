@@ -74,6 +74,13 @@ namespace Form114.Controllers
             return Json(lV, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult ListeVille3()
+        {
+            var lV = _db.Villes.OrderBy(v => v.name).Select(v => new { id = v.idVille, name = v.name });
+            var liste = lV.ToList();
+            return Json(lV, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult ListeRegion()
         {
             var lR = _db.Regions.OrderBy(r => r.name).Select(r => new { id = r.idRegion, name = r.name });
@@ -86,6 +93,12 @@ namespace Form114.Controllers
             var lR = _db.Pays.Where(r => r.idRegion == ID).OrderBy(r => r.Name).Select(r => new { id = r.CodeIso3, name = r.Name });
             var result = lR.ToList();
             return Json(lR, JsonRequestBehavior.AllowGet);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult SearchBarHeader()
+        {
+            return PartialView("_SearchBarHeader", new SearchViewModel());
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Form114.Models
         [XmlArray("Ville")]
         [XmlArrayItem("Ville", typeof(int))]
         public int[] Ville { get; set; }
+        public string NomVille { get; set; }
         public int? nbPlaces { get; set; }
         public DateTime DateDebut { get; set; }
         public DateTime DateFin { get; set; }

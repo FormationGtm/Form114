@@ -14,7 +14,7 @@ html, body {
     padding-right: -15px;
 }*/
 
-div#footer {
+div#footer1 {
     position : static;
     background: none;
     overflow: hidden;
@@ -27,7 +27,7 @@ div#footer {
     margin-bottom : 0;
 }
 
-html > body #footer {
+html > body #footer1 {
     position: fixed;
 }
 
@@ -103,7 +103,7 @@ div.imgind {
 }
 
 div.img1 {
-    height: 250px;
+    height: 180px;
     text-align: center;
 }
 
@@ -241,3 +241,8 @@ fieldset {
         font-size: 18px;
     }
 }
+
+
+.searchbar__location1{width:200px}
+.searchbar__location1 input{border-top-right-radius:0;border-bottom-right-radius:0}
+.searchbar__location1-error{background:#fff;background:rgba(255,255,255,0.8);border-radius:0 0 3px 3px;left:0;margin-top:-1px;position:absolute;top:100%;width:200px}

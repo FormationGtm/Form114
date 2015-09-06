@@ -1,5 +1,6 @@
 ﻿using DataLayer.Models;
 using Form114.Infrastructure;
+using Form114.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,17 @@ namespace Form114.Controllers
         //TODO Changer la liste à afficher en fonction du nombre de vues
         public ActionResult Index()
         {
-            var list = _db.Produits.Take(3).ToList();
+
+            ViewBag.listProduit = _db.Produits.Take(3).ToList();
             //var listCatalog = _db.Regions.Take(4).ToList();
             ViewBag.listRegions = _db.Regions.Take(4).ToList();
-            return View(list);
+            return View(new SearchViewModel());
+        }
+
+        [ChildActionOnly]
+        public ActionResult Footer()
+        {
+            return PartialView("_Footer");
         }
 
         public ActionResult About()

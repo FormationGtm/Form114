@@ -222,6 +222,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Comments\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\Comments\images\user_blank_picture.png" />
+    <Content Include="Content\Comments\jquery.comment.css" />
     <Content Include="Content\creative.css" />
     <Content Include="Content\DateRangePicker\daterangepicker-kv.css" />
     <Content Include="Content\DateRangePicker\daterangepicker-kv.min.css" />
@@ -236,6 +239,7 @@
     <Content Include="Content\jquery-ui.theme.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\jquery.comiseo.daterangepicker.css" />
+    <Content Include="Content\Modified\jquery-ui.css" />
     <Content Include="Content\TemplateUsed\animate.min.css" />
     <Content Include="Content\TemplateUsed\creative.css" />
     <Content Include="Content\TemplateUsed\font-awesome.min.css" />
@@ -294,6 +298,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Modified\jquery-ui.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
@@ -347,6 +352,8 @@
     <Content Include="Views\Produit\Details.cshtml" />
     <Content Include="Views\Reservation\Reserver.cshtml" />
     <Content Include="Views\Home\_Catalog.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_SearchBarHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

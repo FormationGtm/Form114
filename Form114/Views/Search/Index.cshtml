@@ -4,47 +4,116 @@
     ViewBag.Title = "Recherche Appartement de Vacances";
 }
 
+@*@section scripts{
+        <script src="~/Scripts/jquery-2.1.4.js"></script>
+        <script src="~/Scripts/jquery-ui.js"></script>
+        <script src="~/Scripts/bootstrap-datepicker.fr.js"></script>
+        <script src="~/Scripts/Search/Region.js"></script>
+        <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+        <script src="~/Scripts/Search/Slider.js"></script>
+        <script src="~/Scripts/Search/ListeVille.js"></script>
+        <script src="~/Scripts/Search/Datepicker.js"></script>
+
+        <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-chosen.css" rel="stylesheet" />
+    }*@
+
 @section scripts{
     <script src="~/Scripts/jquery-2.1.4.js"></script>
-    <script src="~/Scripts/jquery-ui.js"></script>
-    <script src="~/Scripts/bootstrap-datepicker.fr.js"></script>
-    <script src="~/Scripts/Search/Region.js"></script>
-    <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
     <script src="~/Scripts/Search/Slider.js"></script>
+    <script src="~/Scripts/Home/VuesPartielles.js"></script>
+    <script src="~/Scripts/Modified/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.fr.js"></script>
+    <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
     <script src="~/Scripts/Search/ListeVille.js"></script>
-    <script src="~/Scripts/Search/Datepicker.js"></script>
+    <script>
+        $(function () {
+            $("#from").datepicker1({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                onClose: function (selectedDate) {
+                    $("#to").datepicker1("option", "minDate", selectedDate);
+                }
+            });
+            $("#from").datepicker1("option", "dateFormat", "dd/mm/yy");
+            $("#to").datepicker1({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                language: "fr",
+                onClose: function (selectedDate) {
+                    $("#from").datepicker1("option", "maxDate", selectedDate);
+                }
+            });
+            $("#to").datepicker1("option", "dateFormat", "dd/mm/yy");
+        });
+    </script>
+    <script>
+        $(function () {
+            var availableTags = [""];
+            $.getJSON("/Search/ListeVille3", function (data) {
+                $.each(data, function (idx, item) {
 
-    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-chosen.css" rel="stylesheet" />
+                    availableTags.push(item.name.trim());
+                });
+            });
+
+            //alert(availableTags);
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        });
+
+    </script>
 }
+
+
+@section styles{
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Modified/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-chosen.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" media="all" href="https://a1.muscache.com/airbnb/static/packages/common_o2.1-858f47868a8d0e12dfa7eb60fa84fb17.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="https://a2.muscache.com/airbnb/static/p1/main-5cb7d688449bd133cdab91df9172776f.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+}
+
+
+
+
+
 <h2>Search</h2>
 
 
-@using (Html.BeginForm("Result", "Search"))
-{
-    using (@Html.FieldsetHelper("Prix du Logement"))
+@*@using (Html.BeginForm("Result", "Search"))
     {
-        @Html.Slider("slider-range")
+        using (@Html.FieldsetHelper("Prix du Logement"))
+        {
+            @Html.Slider("slider-range")
 
-        @Html.ListeVille()
+            @Html.ListeVille()
 
-        @*@Html.ListeDeroulante("Region")
+            @Html.ListeDeroulante("Region")
 
-            @Html.ListeDeroulante("Pays")
+                @Html.ListeDeroulante("Pays")
 
-            @Html.ListeDeroulante("Ville")*@
+                @Html.ListeDeroulante("Ville")
 
-        @*<select id="Region" name="Region"></select>
-        <select id="Pays"></select>
-        <select id="Ville1"></select>*@
+            <select id="Region" name="Region"></select>
+            <select id="Pays"></select>
+            <select id="Ville1"></select>
 
-        @Html.NombreDePlace()
+            @Html.NombreDePlace()
 
-        @Html.DatePicker("Rechercher")
+            @Html.DatePicker("Rechercher")
 
-    }
+        }
 
-}
+    }*@
+<section>
+    @Html.Action("SearchBarHeader", "Search")
+</section>
 <div class="col-lg-4"></div>
 
 

@@ -1,60 +1,204 @@
-﻿@model List<DataLayer.Models.Produits>
-
+﻿@model Form114.Models.SearchViewModel
+@using Form114.Infrastructure
 @{
     ViewBag.Title = "Welcome to AiR'n'B";
 }
 
-@section scripts {
+@section scripts{
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
     <script src="~/Scripts/Home/VuesPartielles.js"></script>
+    <script src="~/Scripts/Modified/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.fr.js"></script>
+    <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+    <script src="~/Scripts/Search/ListeVille.js"></script>
+    <script>
+        $(function () {
+            $("#from").datepicker1({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                onClose: function (selectedDate) {
+                    $("#to").datepicker1("option", "minDate", selectedDate);
+                }
+            });
+            $("#from").datepicker1("option", "dateFormat", "dd/mm/yy");
+            $("#to").datepicker1({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                language: "fr",
+                onClose: function (selectedDate) {
+                    $("#from").datepicker1("option", "maxDate", selectedDate);
+                }
+            });
+            $("#to").datepicker1("option", "dateFormat", "dd/mm/yy");
+        });
+    </script>
+    <script>
+        $(function () {
+            var availableTags = [""];
+            $.getJSON("/Search/ListeVille3", function (data) {
+                $.each(data, function (idx, item) {
+
+                    availableTags.push(item.name.trim());
+                });
+            });
+
+            //alert(availableTags);
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        });
+
+    </script>
 }
 
 @section styles{
     <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Modified/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-chosen.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" media="all" href="https://a1.muscache.com/airbnb/static/packages/common_o2.1-858f47868a8d0e12dfa7eb60fa84fb17.css" />
     <link type="text/css" rel="stylesheet" media="screen" href="https://a2.muscache.com/airbnb/static/p1/main-5cb7d688449bd133cdab91df9172776f.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    @*<link href="~/Content/creative.css" rel="stylesheet" />
-        <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
-        <link href="~/Content/animate.min.css" rel="stylesheet" />*@
 }
 
-<div id="head">
-    <div id="cont">
-        <div id="in">
-            <h1>Faites comme chez vous!</h1>
-            <hr>
-            <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-            <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+
+@*#Orange : #F5D76E, BlEU Trurquoi: #89C4F4, Violet : #BE90D4 || Trois Couleur*@
+@using (Html.BeginForm("Result", "Search"))
+{
+
+    <div id="head" style="height:100%;">
+        <div id="cont">
+            <div id="in">
+                <hr>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <h1>Faites comme chez vous!</h1>
+                <a href="/Search" style="background-color : #BE90D4; border: hidden;" class="btn btn-primary btn-xl page-scroll">Trouver une chambre</a>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="hero__content-footer " style="background-color: #F5D76E; opacity: 0.89;">
+            <div class="col-sm-12">
+                <div class="searchbar">
+                    <div class="searchbar__input-wrapper">
+                        <span>
+                            <label class="input-placeholder-group searchbar__checkout" style="width:220px;position : inherit;">
+                                <span class="input-placeholder-label screen-reader-only">Arrivée</span>
+
+                                <div class="ui-widget">
+                                    <input type="text" name="NomVille" id="tags" placeholder="Où voulez-vous aller ?">
+                                </div>
+                            </label>
+                            <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
+                                <span class="screen-reader-only">Départ?</span>
+                                <input id="from" name="DateDebut" type="text" placeholder="Départ?" />
+                            </label>
+                            <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
+                                <span class="screen-reader-only">Fin?</span>
+                                <input id="to" name="DateFin" type="text" placeholder="Fin?" />
+                            </label>
+                        </span>
+                        <label class="searchbar__guests">
+                            <span class="screen-reader-only">Nombre de voyageurs</span>
+                            <div class="select select-large">
+                                <select id="guests" name="nbPlaces">
+                                    <option value="1">1 place</option>
+                                    <option value="2">2 places</option>
+                                    <option value="3">3 places</option>
+                                    <option value="4">4 places</option>
+                                    <option value="5">5 places</option>
+                                    <option value="6">6 places</option>
+                                    <option value="7">7 places</option>
+                                    <option value="8">8 places</option>
+                                    <option value="9">9 places</option>
+                                    <option value="10">10 places</option>
+
+                                </select>
+                            </div>
+                        </label>
+                        <div id="autocomplete-menu-sf787c6a1e15f08" class="menu hide">
+                            <div class="menu-section " data-reactid=".2.0.0.$=14:0.0"></div>
+                        </div>
+                    </div>
+                    <input type="hidden" value="bb" name="source">
+
+                    <button id="submit_location" style="background-color: #BE90D4; border: hidden;" class="searchbar__submit btn-primary btn-large" type="submit">Rechercher</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+ 
+}
+
+<div class="center-block" style="background-color : #ffffff ; padding:25px;">
+    <div class="row center-block">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-8">
+            @foreach (var item in (List<DataLayer.Models.Produits>)ViewBag.listProduit)
+            {
+
+                <div class="col-sm-3">@Html.Action("Miniature", "Produit", new { id = item.IdProduit })</div>
+
+            }
+        </div>
+        <div class="col-sm-2">
         </div>
     </div>
-</div>
 
-<div style="background-color : #89C4F4; padding:25px;">
-    <div class="row center-block">
-        @foreach (var item in Model)
-        {
-
-            <div class="col-sm-4">@Html.Action("Miniature", "Produit", new { id = item.IdProduit })</div>
-
-        }
-    </div>
 </div>
 
 
 
 
-<div class="center-block" style="background-color : #59ABE3; padding:25px;">
+<div class="center-block" style="background-color :#89C4F4; padding:25px;">
     <div class="row">
 
-        @foreach (var item in (List<DataLayer.Models.Regions>)ViewBag.listRegions)
+        @foreach (var item in (List<DataLayer.Models.Regions>
+                    )ViewBag.listRegions)
         {
-            <div class="col-xs-4">
+            <div class="col-xs-3">
                 @Html.Action("Catalog", "Home", new { id = item.idRegion })
             </div>
         }
 
     </div>
 </div>
+
+

@@ -16,4 +16,6 @@
     //  " - €" + $("#prixmaxi"));
     $("#amount").val("€" + $("#slider-range").slider("values", 0) +
   " - €" + $("#slider-range").slider("values", 1));
+    $('#amount').css('color', '#BE90D4');
+    $('#slider-range .ui-slider-range').css('background', '#BE90D4');
 });

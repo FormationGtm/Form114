@@ -1,0 +1,68 @@
+﻿@model Form114.Models.SearchViewModel
+@using Form114.Infrastructure
+
+@using (Html.BeginForm("Result", "Search"))
+{
+    <div class="row center-block form-horizontal form-inline" style="background-color:#89C4F4; height:200px; max-width:100%; padding:25px; opacity:0.89">
+
+        <div class="col-xs-6 left" style="vertical-align:middle; float:left;">
+            @Html.Slider("slider-range")
+        </div>
+        <div class="col-xs-6" style="vertical-align:middle;float:right;">
+            <br/>
+            <br/>
+            <div style="opacity: 0.89;">
+                <div class="col-xs--10">
+                    <div class="searchbar center-block " style="float:right">
+                        <div class="searchbar__input-wrapper">
+                            <span>
+                                <label class="input-placeholder-group searchbar__checkout" style="width:220px;position : inherit;">
+                                    <span class="input-placeholder-label screen-reader-only">Arrivée</span>
+
+                                    <div class="ui-widget">
+                                        <input type="text" name="NomVille" id="tags" placeholder="Où voulez-vous aller ?">
+                                    </div>
+                                </label>
+                                <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
+                                    <span class="screen-reader-only">Départ?</span>
+                                    <input id="from" name="DateDebut" type="text" placeholder="Départ?" />
+                                </label>
+                                <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
+                                    <span class="screen-reader-only">Fin?</span>
+                                    <input id="to" name="DateFin" type="text" placeholder="Fin?" />
+                                </label>
+                            </span>
+                            <label class="searchbar__guests">
+                                <span class="screen-reader-only">Nombre de voyageurs</span>
+                                <div class="select select-large">
+                                    <select id="guests" name="nbPlaces">
+                                        <option value="1">1 place</option>
+                                        <option value="2">2 places</option>
+                                        <option value="3">3 places</option>
+                                        <option value="4">4 places</option>
+                                        <option value="5">5 places</option>
+                                        <option value="6">6 places</option>
+                                        <option value="7">7 places</option>
+                                        <option value="8">8 places</option>
+                                        <option value="9">9 places</option>
+                                        <option value="10">10 places</option>
+
+                                    </select>
+                                </div>
+                            </label>
+                            <div id="autocomplete-menu-sf787c6a1e15f08" class="menu hide">
+                                <div class="menu-section " data-reactid=".2.0.0.$=14:0.0"></div>
+                            </div>
+                        </div>
+                        <input type="hidden" value="bb" name="source">
+
+                        <button id="submit_location" style="background-color: #BE90D4; border: hidden;" class="searchbar__submit btn-primary btn-large" type="submit">Rechercher</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}
