@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5586ebd68e3f48a1a2b6c5f396f2ce6a" Name="Diagram1">
+      <Diagram DiagramId="ce0f5baca3c84c91a9137367a1e4618c" Name="Diagram1">
         <EntityTypeShape EntityType="Form114Model.Acheteurs" Width="1.5" PointX="16.5" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Form114Model.Administrateurs" Width="1.5" PointX="14.25" PointY="23.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Form114Model.Adresses" Width="1.5" PointX="12" PointY="26.875" IsExpanded="true" />
@@ -32,21 +32,21 @@
         <AssociationConnector Association="Form114Model.fk_utilisateurs_adresse" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Commentai__idAut__797309D9" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Reservati__IdCli__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Commentai__idAut__509BDCCF" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Reservati__IdCli__49EEDF40" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.Fk_Identites_AspNetUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Commentai__idPar__787EE5A0" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Commentai__idPro__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Commentai__idPar__4FA7B896" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Commentai__idPro__51900108" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.Regions_Continents_fk" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.fk_utilisateurs_identites" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Newslette__idIns__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Newslette__idIns__546C6DB3" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.Pays_Regions_fk" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.Villes_Pays_fk" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Photos__IdProdui__5FB337D6" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Prix__IdProduit__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Produits__IdVill__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Promos__IdProdui__75A278F5" ManuallyRouted="false" />
-        <AssociationConnector Association="Form114Model.FK__Reservati__IdPro__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Photos__IdProdui__36DC0ACC" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Prix__IdProduit__39B87777" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Produits__IdVill__33FF9E21" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Promos__IdProdui__4CCB4BEB" ManuallyRouted="false" />
+        <AssociationConnector Association="Form114Model.FK__Reservati__IdPro__48FABB07" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.Fk_ProduitTracking_Produits" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.Fk_Vendeurs_Utilisateurs" ManuallyRouted="false" />
         <AssociationConnector Association="Form114Model.AspNetUserRoles" ManuallyRouted="false" />

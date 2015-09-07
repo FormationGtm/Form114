@@ -31,7 +31,9 @@ namespace Form114.Areas.Areas.Controllers
             {
                 var user = _db.Identites.Where(i => i.AspNetUsers.Email == item).Select(i => new { i.Nom, i.Prenom }).FirstOrDefault();
 
-                body = "Bonjour, " + user.Prenom + " " + user.Nom + "\n" + nvm.Body + "\nPour vous désinscrire : http://localhost:56706/Areas/Newsletter/Desinscrire?id=" + item;
+                body = "Bonjour, " + user.Prenom + " " + user.Nom + "\n" + 
+                    nvm.Body + "\nProduit mis en avant cette semaine : \n " + lien +
+                    "\nPour vous désinscrire : http://localhost:56706/Areas/Newsletter/Desinscrire?id=" + item;
                 EnvoiMail(item, sujet, body);
             }
         }

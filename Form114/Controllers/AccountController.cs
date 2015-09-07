@@ -18,7 +18,7 @@ namespace Form114.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        //private readonly Form114Entities _db = new Form114Entities();
+        private readonly Form114Entities _db = new Form114Entities();
 
         public AccountController()
         {
@@ -178,16 +178,20 @@ namespace Form114.Controllers
                     identity.IdUser = _db.AspNetUsers.Where(a => a.Email == model.Email).Select(a => a.Id).FirstOrDefault();
                     _db.Identites.Add(identity);
                     _db.SaveChanges();
+
                     utilisateur.IdAdresse = adresse.IdAdresse;
+                    utilisateur.IdUtilisateur = identity.IdIdentite;
                     _db.Utilisateurs.Add(utilisateur);
-                    if (model.Newsletter)
-                        _db.NewsletterInscrits.Add(
-                            new DataLayer.Models.NewsletterInscrits()
-                            {
-                                idInscrit = utilisateur.IdUtilisateur
-                            }
-                        );
                     _db.SaveChanges();
+                    if (model.Newsletter)
+                    {
+                        var ni = new DataLayer.Models.NewsletterInscrits()
+                        {
+                            idInscrit = utilisateur.IdUtilisateur
+                        };
+                        _db.NewsletterInscrits.Add(ni);
+                        _db.SaveChanges();
+                    }
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // Pour plus d'informations sur l'activation de la confirmation du compte et la réinitialisation du mot de passe, consultez http://go.microsoft.com/fwlink/?LinkID=320771

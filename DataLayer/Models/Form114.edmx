@@ -200,7 +200,7 @@
           <Key>
             <PropertyRef Name="IdUtilisateur" />
           </Key>
-          <Property Name="IdUtilisateur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUtilisateur" Type="int" Nullable="false" />
           <Property Name="IdAdresse" Type="int" Nullable="false" />
           <Property Name="DateInscription" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="LastConnection" Type="datetime2" Precision="7" />
@@ -222,7 +222,7 @@
           <Property Name="population" Type="int" Nullable="false" />
           <Property Name="isCapital" Type="smallint" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Commentai__idAut__797309D9">
+        <Association Name="FK__Commentai__idAut__509BDCCF">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
           <End Role="Commentaires" Type="Self.Commentaires" Multiplicity="*" />
           <ReferentialConstraint>
@@ -234,7 +234,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Commentai__idPar__787EE5A0">
+        <Association Name="FK__Commentai__idPar__4FA7B896">
           <End Role="Commentaires" Type="Self.Commentaires" Multiplicity="0..1" />
           <End Role="Commentaires1" Type="Self.Commentaires" Multiplicity="*" />
           <ReferentialConstraint>
@@ -246,7 +246,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Commentai__idPro__7A672E12">
+        <Association Name="FK__Commentai__idPro__51900108">
           <End Role="Produits" Type="Self.Produits" Multiplicity="1" />
           <End Role="Commentaires" Type="Self.Commentaires" Multiplicity="*" />
           <ReferentialConstraint>
@@ -258,7 +258,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Newslette__idIns__7D439ABD">
+        <Association Name="FK__Newslette__idIns__546C6DB3">
           <End Role="Utilisateurs" Type="Self.Utilisateurs" Multiplicity="1" />
           <End Role="NewsletterInscrits" Type="Self.NewsletterInscrits" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -270,7 +270,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Photos__IdProdui__5FB337D6">
+        <Association Name="FK__Photos__IdProdui__36DC0ACC">
           <End Role="Produits" Type="Self.Produits" Multiplicity="1" />
           <End Role="Photos" Type="Self.Photos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -282,7 +282,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Prix__IdProduit__628FA481">
+        <Association Name="FK__Prix__IdProduit__39B87777">
           <End Role="Produits" Type="Self.Produits" Multiplicity="0..1" />
           <End Role="Prix" Type="Self.Prix" Multiplicity="*" />
           <ReferentialConstraint>
@@ -294,7 +294,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Produits__IdVill__5CD6CB2B">
+        <Association Name="FK__Produits__IdVill__33FF9E21">
           <End Role="Villes" Type="Self.Villes" Multiplicity="1" />
           <End Role="Produits" Type="Self.Produits" Multiplicity="*" />
           <ReferentialConstraint>
@@ -306,7 +306,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Promos__IdProdui__75A278F5">
+        <Association Name="FK__Promos__IdProdui__4CCB4BEB">
           <End Role="Produits" Type="Self.Produits" Multiplicity="0..1" />
           <End Role="Promos" Type="Self.Promos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -318,7 +318,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__IdCli__72C60C4A">
+        <Association Name="FK__Reservati__IdCli__49EEDF40">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -330,7 +330,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__IdPro__71D1E811">
+        <Association Name="FK__Reservati__IdPro__48FABB07">
           <End Role="Produits" Type="Self.Produits" Multiplicity="1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -542,43 +542,43 @@
           <EntitySet Name="Utilisateurs" EntityType="Self.Utilisateurs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vendeurs" EntityType="Self.Vendeurs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Villes" EntityType="Self.Villes" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Commentai__idAut__797309D9" Association="Self.FK__Commentai__idAut__797309D9">
+          <AssociationSet Name="FK__Commentai__idAut__509BDCCF" Association="Self.FK__Commentai__idAut__509BDCCF">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Commentaires" EntitySet="Commentaires" />
           </AssociationSet>
-          <AssociationSet Name="FK__Commentai__idPar__787EE5A0" Association="Self.FK__Commentai__idPar__787EE5A0">
+          <AssociationSet Name="FK__Commentai__idPar__4FA7B896" Association="Self.FK__Commentai__idPar__4FA7B896">
             <End Role="Commentaires" EntitySet="Commentaires" />
             <End Role="Commentaires1" EntitySet="Commentaires" />
           </AssociationSet>
-          <AssociationSet Name="FK__Commentai__idPro__7A672E12" Association="Self.FK__Commentai__idPro__7A672E12">
+          <AssociationSet Name="FK__Commentai__idPro__51900108" Association="Self.FK__Commentai__idPro__51900108">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Commentaires" EntitySet="Commentaires" />
           </AssociationSet>
-          <AssociationSet Name="FK__Newslette__idIns__7D439ABD" Association="Self.FK__Newslette__idIns__7D439ABD">
+          <AssociationSet Name="FK__Newslette__idIns__546C6DB3" Association="Self.FK__Newslette__idIns__546C6DB3">
             <End Role="Utilisateurs" EntitySet="Utilisateurs" />
             <End Role="NewsletterInscrits" EntitySet="NewsletterInscrits" />
           </AssociationSet>
-          <AssociationSet Name="FK__Photos__IdProdui__5FB337D6" Association="Self.FK__Photos__IdProdui__5FB337D6">
+          <AssociationSet Name="FK__Photos__IdProdui__36DC0ACC" Association="Self.FK__Photos__IdProdui__36DC0ACC">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Photos" EntitySet="Photos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Prix__IdProduit__628FA481" Association="Self.FK__Prix__IdProduit__628FA481">
+          <AssociationSet Name="FK__Prix__IdProduit__39B87777" Association="Self.FK__Prix__IdProduit__39B87777">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Prix" EntitySet="Prix" />
           </AssociationSet>
-          <AssociationSet Name="FK__Produits__IdVill__5CD6CB2B" Association="Self.FK__Produits__IdVill__5CD6CB2B">
+          <AssociationSet Name="FK__Produits__IdVill__33FF9E21" Association="Self.FK__Produits__IdVill__33FF9E21">
             <End Role="Villes" EntitySet="Villes" />
             <End Role="Produits" EntitySet="Produits" />
           </AssociationSet>
-          <AssociationSet Name="FK__Promos__IdProdui__75A278F5" Association="Self.FK__Promos__IdProdui__75A278F5">
+          <AssociationSet Name="FK__Promos__IdProdui__4CCB4BEB" Association="Self.FK__Promos__IdProdui__4CCB4BEB">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Promos" EntitySet="Promos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__IdCli__72C60C4A" Association="Self.FK__Reservati__IdCli__72C60C4A">
+          <AssociationSet Name="FK__Reservati__IdCli__49EEDF40" Association="Self.FK__Reservati__IdCli__49EEDF40">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__IdPro__71D1E811" Association="Self.FK__Reservati__IdPro__71D1E811">
+          <AssociationSet Name="FK__Reservati__IdPro__48FABB07" Association="Self.FK__Reservati__IdPro__48FABB07">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
@@ -716,8 +716,8 @@
           <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
           <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
-          <NavigationProperty Name="Commentaires" Relationship="Self.FK__Commentai__idAut__797309D9" FromRole="AspNetUsers" ToRole="Commentaires" />
-          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__IdCli__72C60C4A" FromRole="AspNetUsers" ToRole="Reservations" />
+          <NavigationProperty Name="Commentaires" Relationship="Self.FK__Commentai__idAut__509BDCCF" FromRole="AspNetUsers" ToRole="Commentaires" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__IdCli__49EEDF40" FromRole="AspNetUsers" ToRole="Reservations" />
           <NavigationProperty Name="Identites" Relationship="Self.Fk_Identites_AspNetUsers" FromRole="AspNetUsers" ToRole="Identites" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
         </EntityType>
@@ -731,10 +731,10 @@
           <Property Name="idProduit" Type="Int32" Nullable="false" />
           <Property Name="datePoste" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="texte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK__Commentai__idAut__797309D9" FromRole="Commentaires" ToRole="AspNetUsers" />
-          <NavigationProperty Name="Commentaires1" Relationship="Self.FK__Commentai__idPar__787EE5A0" FromRole="Commentaires" ToRole="Commentaires1" />
-          <NavigationProperty Name="Commentaires2" Relationship="Self.FK__Commentai__idPar__787EE5A0" FromRole="Commentaires1" ToRole="Commentaires" />
-          <NavigationProperty Name="Produits" Relationship="Self.FK__Commentai__idPro__7A672E12" FromRole="Commentaires" ToRole="Produits" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK__Commentai__idAut__509BDCCF" FromRole="Commentaires" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Commentaires1" Relationship="Self.FK__Commentai__idPar__4FA7B896" FromRole="Commentaires" ToRole="Commentaires1" />
+          <NavigationProperty Name="Commentaires2" Relationship="Self.FK__Commentai__idPar__4FA7B896" FromRole="Commentaires1" ToRole="Commentaires" />
+          <NavigationProperty Name="Produits" Relationship="Self.FK__Commentai__idPro__51900108" FromRole="Commentaires" ToRole="Produits" />
         </EntityType>
         <EntityType Name="Continents">
           <Key>
@@ -762,7 +762,7 @@
             <PropertyRef Name="idInscrit" />
           </Key>
           <Property Name="idInscrit" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Utilisateurs" Relationship="Self.FK__Newslette__idIns__7D439ABD" FromRole="NewsletterInscrits" ToRole="Utilisateurs" />
+          <NavigationProperty Name="Utilisateurs" Relationship="Self.FK__Newslette__idIns__546C6DB3" FromRole="NewsletterInscrits" ToRole="Utilisateurs" />
         </EntityType>
         <EntityType Name="Pays">
           <Key>
@@ -791,7 +791,7 @@
           <Property Name="IdPhoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdProduit" Type="Int32" Nullable="false" />
           <Property Name="Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Produits" Relationship="Self.FK__Photos__IdProdui__5FB337D6" FromRole="Photos" ToRole="Produits" />
+          <NavigationProperty Name="Produits" Relationship="Self.FK__Photos__IdProdui__36DC0ACC" FromRole="Photos" ToRole="Produits" />
         </EntityType>
         <EntityType Name="Prix">
           <Key>
@@ -802,7 +802,7 @@
           <Property Name="DateDebut" Type="DateTime" Precision="0" />
           <Property Name="DateFin" Type="DateTime" Precision="0" />
           <Property Name="Montant" Type="Int32" />
-          <NavigationProperty Name="Produits" Relationship="Self.FK__Prix__IdProduit__628FA481" FromRole="Prix" ToRole="Produits" />
+          <NavigationProperty Name="Produits" Relationship="Self.FK__Prix__IdProduit__39B87777" FromRole="Prix" ToRole="Produits" />
         </EntityType>
         <EntityType Name="Produits">
           <Key>
@@ -813,12 +813,12 @@
           <Property Name="NbPlaces" Type="Int32" />
           <Property Name="Adresse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Commentaires" Relationship="Self.FK__Commentai__idPro__7A672E12" FromRole="Produits" ToRole="Commentaires" />
-          <NavigationProperty Name="Photos" Relationship="Self.FK__Photos__IdProdui__5FB337D6" FromRole="Produits" ToRole="Photos" />
-          <NavigationProperty Name="Prix" Relationship="Self.FK__Prix__IdProduit__628FA481" FromRole="Produits" ToRole="Prix" />
-          <NavigationProperty Name="Villes" Relationship="Self.FK__Produits__IdVill__5CD6CB2B" FromRole="Produits" ToRole="Villes" />
-          <NavigationProperty Name="Promos" Relationship="Self.FK__Promos__IdProdui__75A278F5" FromRole="Produits" ToRole="Promos" />
-          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__IdPro__71D1E811" FromRole="Produits" ToRole="Reservations" />
+          <NavigationProperty Name="Commentaires" Relationship="Self.FK__Commentai__idPro__51900108" FromRole="Produits" ToRole="Commentaires" />
+          <NavigationProperty Name="Photos" Relationship="Self.FK__Photos__IdProdui__36DC0ACC" FromRole="Produits" ToRole="Photos" />
+          <NavigationProperty Name="Prix" Relationship="Self.FK__Prix__IdProduit__39B87777" FromRole="Produits" ToRole="Prix" />
+          <NavigationProperty Name="Villes" Relationship="Self.FK__Produits__IdVill__33FF9E21" FromRole="Produits" ToRole="Villes" />
+          <NavigationProperty Name="Promos" Relationship="Self.FK__Promos__IdProdui__4CCB4BEB" FromRole="Produits" ToRole="Promos" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__IdPro__48FABB07" FromRole="Produits" ToRole="Reservations" />
           <NavigationProperty Name="ProduitTracking" Relationship="Self.Fk_ProduitTracking_Produits" FromRole="Produits" ToRole="ProduitTracking" />
         </EntityType>
         <EntityType Name="ProduitTracking">
@@ -839,7 +839,7 @@
           <Property Name="Promo" Type="Int32" Nullable="false" />
           <Property Name="DateDeb" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DateFin" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Produits" Relationship="Self.FK__Promos__IdProdui__75A278F5" FromRole="Promos" ToRole="Produits" />
+          <NavigationProperty Name="Produits" Relationship="Self.FK__Promos__IdProdui__4CCB4BEB" FromRole="Promos" ToRole="Produits" />
         </EntityType>
         <EntityType Name="Regions">
           <Key>
@@ -862,21 +862,21 @@
           <Property Name="DateFin" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NbPersonnes" Type="Int32" Nullable="false" />
           <Property Name="Prix" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK__Reservati__IdCli__72C60C4A" FromRole="Reservations" ToRole="AspNetUsers" />
-          <NavigationProperty Name="Produits" Relationship="Self.FK__Reservati__IdPro__71D1E811" FromRole="Reservations" ToRole="Produits" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK__Reservati__IdCli__49EEDF40" FromRole="Reservations" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Produits" Relationship="Self.FK__Reservati__IdPro__48FABB07" FromRole="Reservations" ToRole="Produits" />
         </EntityType>
         <EntityType Name="Utilisateurs">
           <Key>
             <PropertyRef Name="IdUtilisateur" />
           </Key>
-          <Property Name="IdUtilisateur" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUtilisateur" Type="Int32" Nullable="false" />
           <Property Name="IdAdresse" Type="Int32" Nullable="false" />
           <Property Name="DateInscription" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="LastConnection" Type="DateTime" Precision="7" />
           <NavigationProperty Name="Acheteurs" Relationship="Self.Fk_Acheteurs_Utilisateurs" FromRole="Utilisateurs" ToRole="Acheteurs" />
           <NavigationProperty Name="Adresses" Relationship="Self.fk_utilisateurs_adresse" FromRole="Utilisateurs" ToRole="Adresses" />
           <NavigationProperty Name="Identites" Relationship="Self.fk_utilisateurs_identites" FromRole="Utilisateurs" ToRole="Identites" />
-          <NavigationProperty Name="NewsletterInscrits" Relationship="Self.FK__Newslette__idIns__7D439ABD" FromRole="Utilisateurs" ToRole="NewsletterInscrits" />
+          <NavigationProperty Name="NewsletterInscrits" Relationship="Self.FK__Newslette__idIns__546C6DB3" FromRole="Utilisateurs" ToRole="NewsletterInscrits" />
           <NavigationProperty Name="Vendeurs" Relationship="Self.Fk_Vendeurs_Utilisateurs" FromRole="Utilisateurs" ToRole="Vendeurs" />
         </EntityType>
         <EntityType Name="Vendeurs">
@@ -897,7 +897,7 @@
           <Property Name="population" Type="Int32" Nullable="false" />
           <Property Name="isCapital" Type="Int16" Nullable="false" />
           <NavigationProperty Name="Pays" Relationship="Self.Villes_Pays_fk" FromRole="Villes" ToRole="Pays" />
-          <NavigationProperty Name="Produits" Relationship="Self.FK__Produits__IdVill__5CD6CB2B" FromRole="Villes" ToRole="Produits" />
+          <NavigationProperty Name="Produits" Relationship="Self.FK__Produits__IdVill__33FF9E21" FromRole="Villes" ToRole="Produits" />
         </EntityType>
         <Association Name="Fk_Acheteurs_Utilisateurs">
           <End Role="Utilisateurs" Type="Self.Utilisateurs" Multiplicity="1" />
@@ -963,7 +963,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Commentai__idAut__797309D9">
+        <Association Name="FK__Commentai__idAut__509BDCCF">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
           <End Role="Commentaires" Type="Self.Commentaires" Multiplicity="*" />
           <ReferentialConstraint>
@@ -975,7 +975,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__IdCli__72C60C4A">
+        <Association Name="FK__Reservati__IdCli__49EEDF40">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -999,7 +999,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Commentai__idPar__787EE5A0">
+        <Association Name="FK__Commentai__idPar__4FA7B896">
           <End Role="Commentaires" Type="Self.Commentaires" Multiplicity="0..1" />
           <End Role="Commentaires1" Type="Self.Commentaires" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1011,7 +1011,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Commentai__idPro__7A672E12">
+        <Association Name="FK__Commentai__idPro__51900108">
           <End Role="Produits" Type="Self.Produits" Multiplicity="1" />
           <End Role="Commentaires" Type="Self.Commentaires" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1047,7 +1047,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Newslette__idIns__7D439ABD">
+        <Association Name="FK__Newslette__idIns__546C6DB3">
           <End Role="Utilisateurs" Type="Self.Utilisateurs" Multiplicity="1" />
           <End Role="NewsletterInscrits" Type="Self.NewsletterInscrits" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1083,7 +1083,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Photos__IdProdui__5FB337D6">
+        <Association Name="FK__Photos__IdProdui__36DC0ACC">
           <End Role="Produits" Type="Self.Produits" Multiplicity="1" />
           <End Role="Photos" Type="Self.Photos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1095,7 +1095,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Prix__IdProduit__628FA481">
+        <Association Name="FK__Prix__IdProduit__39B87777">
           <End Role="Produits" Type="Self.Produits" Multiplicity="0..1" />
           <End Role="Prix" Type="Self.Prix" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1107,7 +1107,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Produits__IdVill__5CD6CB2B">
+        <Association Name="FK__Produits__IdVill__33FF9E21">
           <End Role="Villes" Type="Self.Villes" Multiplicity="1" />
           <End Role="Produits" Type="Self.Produits" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1119,7 +1119,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Promos__IdProdui__75A278F5">
+        <Association Name="FK__Promos__IdProdui__4CCB4BEB">
           <End Role="Produits" Type="Self.Produits" Multiplicity="0..1" />
           <End Role="Promos" Type="Self.Promos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1131,7 +1131,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__IdPro__71D1E811">
+        <Association Name="FK__Reservati__IdPro__48FABB07">
           <End Role="Produits" Type="Self.Produits" Multiplicity="1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1214,11 +1214,11 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
           </AssociationSet>
-          <AssociationSet Name="FK__Commentai__idAut__797309D9" Association="Self.FK__Commentai__idAut__797309D9">
+          <AssociationSet Name="FK__Commentai__idAut__509BDCCF" Association="Self.FK__Commentai__idAut__509BDCCF">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Commentaires" EntitySet="Commentaires" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__IdCli__72C60C4A" Association="Self.FK__Reservati__IdCli__72C60C4A">
+          <AssociationSet Name="FK__Reservati__IdCli__49EEDF40" Association="Self.FK__Reservati__IdCli__49EEDF40">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
@@ -1226,11 +1226,11 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Identites" EntitySet="Identites" />
           </AssociationSet>
-          <AssociationSet Name="FK__Commentai__idPar__787EE5A0" Association="Self.FK__Commentai__idPar__787EE5A0">
+          <AssociationSet Name="FK__Commentai__idPar__4FA7B896" Association="Self.FK__Commentai__idPar__4FA7B896">
             <End Role="Commentaires" EntitySet="Commentaires" />
             <End Role="Commentaires1" EntitySet="Commentaires" />
           </AssociationSet>
-          <AssociationSet Name="FK__Commentai__idPro__7A672E12" Association="Self.FK__Commentai__idPro__7A672E12">
+          <AssociationSet Name="FK__Commentai__idPro__51900108" Association="Self.FK__Commentai__idPro__51900108">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Commentaires" EntitySet="Commentaires" />
           </AssociationSet>
@@ -1242,7 +1242,7 @@
             <End Role="Identites" EntitySet="Identites" />
             <End Role="Utilisateurs" EntitySet="Utilisateurs" />
           </AssociationSet>
-          <AssociationSet Name="FK__Newslette__idIns__7D439ABD" Association="Self.FK__Newslette__idIns__7D439ABD">
+          <AssociationSet Name="FK__Newslette__idIns__546C6DB3" Association="Self.FK__Newslette__idIns__546C6DB3">
             <End Role="Utilisateurs" EntitySet="Utilisateurs" />
             <End Role="NewsletterInscrits" EntitySet="NewsletterInscrits" />
           </AssociationSet>
@@ -1254,23 +1254,23 @@
             <End Role="Pays" EntitySet="Pays" />
             <End Role="Villes" EntitySet="Villes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Photos__IdProdui__5FB337D6" Association="Self.FK__Photos__IdProdui__5FB337D6">
+          <AssociationSet Name="FK__Photos__IdProdui__36DC0ACC" Association="Self.FK__Photos__IdProdui__36DC0ACC">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Photos" EntitySet="Photos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Prix__IdProduit__628FA481" Association="Self.FK__Prix__IdProduit__628FA481">
+          <AssociationSet Name="FK__Prix__IdProduit__39B87777" Association="Self.FK__Prix__IdProduit__39B87777">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Prix" EntitySet="Prix" />
           </AssociationSet>
-          <AssociationSet Name="FK__Produits__IdVill__5CD6CB2B" Association="Self.FK__Produits__IdVill__5CD6CB2B">
+          <AssociationSet Name="FK__Produits__IdVill__33FF9E21" Association="Self.FK__Produits__IdVill__33FF9E21">
             <End Role="Villes" EntitySet="Villes" />
             <End Role="Produits" EntitySet="Produits" />
           </AssociationSet>
-          <AssociationSet Name="FK__Promos__IdProdui__75A278F5" Association="Self.FK__Promos__IdProdui__75A278F5">
+          <AssociationSet Name="FK__Promos__IdProdui__4CCB4BEB" Association="Self.FK__Promos__IdProdui__4CCB4BEB">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Promos" EntitySet="Promos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__IdPro__71D1E811" Association="Self.FK__Reservati__IdPro__71D1E811">
+          <AssociationSet Name="FK__Reservati__IdPro__48FABB07" Association="Self.FK__Reservati__IdPro__48FABB07">
             <End Role="Produits" EntitySet="Produits" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
@@ -1547,7 +1547,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
