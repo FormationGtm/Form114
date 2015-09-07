@@ -4,9 +4,13 @@
     ViewBag.Title = "Result";
 }
 
+@section scripts {
+    <script src="~/Scripts/Home/VuesPartielles.js"></script>
+}
+
 <h2>Resultats de votre recherche</h2>
 
-<table class="table table-hover table-striped table-bordered table-responsive">
+@*<table class="table table-hover table-striped table-bordered table-responsive">
     <thead>
         <tr>
             <th>Ville</th>
@@ -30,4 +34,15 @@
         }
     </tbody>
 
-</table>
+</table>*@
+
+<div style="background-color : #5D8CAE; padding:25px;">
+    <div class="row center-block">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-sm-8">@Html.Action("Maxiature", "Produit", new { id = item.IdProduit })</div>
+
+        }
+    </div>
+</div>

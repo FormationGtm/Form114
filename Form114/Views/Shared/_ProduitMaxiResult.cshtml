@@ -1,0 +1,28 @@
+﻿@model Form114.Models.ProduitViewModel
+@using Form114.Infrastructure
+@{
+    var s = "place";
+    if (@Model.NbPlaces > 1)
+    {
+        s += 's';
+    }
+}
+
+@section styles{
+    <link href="~/Content/BootFlat/bootflat.css" rel="stylesheet" />
+}
+<div class="img1">
+    <div class="detailsmax center-block">
+        <div class="details1">
+            <div class="thumbnail details1">
+                <div style="float:left">
+                    @Html.MyCarousel(Model.ListPhotos, Model.IdProduit, "cadre2", "MonImage")
+                </div>
+                <div class="caption" style="float:right">
+                    <p>@Model.Adresse...A Completer</p>
+                    <div class="hidden idProduit">@Model.IdProduit</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
