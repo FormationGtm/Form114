@@ -18,7 +18,7 @@ namespace Form114.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private readonly Form114Entities _db = new Form114Entities();
+        //private readonly Form114Entities _db = new Form114Entities();
 
         public AccountController()
         {
