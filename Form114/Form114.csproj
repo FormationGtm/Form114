@@ -181,9 +181,12 @@
     <Compile Include="Controllers\Form114Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaysController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
+    <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\VillesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -363,6 +366,21 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_SearchBarHeader.cshtml" />
     <Content Include="Views\Shared\_ProduitMaxiResult.cshtml" />
+    <Content Include="Views\Pays\Create.cshtml" />
+    <Content Include="Views\Pays\Delete.cshtml" />
+    <Content Include="Views\Pays\Details.cshtml" />
+    <Content Include="Views\Pays\Edit.cshtml" />
+    <Content Include="Views\Pays\Index.cshtml" />
+    <Content Include="Views\Regions\Create.cshtml" />
+    <Content Include="Views\Regions\Delete.cshtml" />
+    <Content Include="Views\Regions\Details.cshtml" />
+    <Content Include="Views\Regions\Edit.cshtml" />
+    <Content Include="Views\Regions\Index.cshtml" />
+    <Content Include="Views\Villes\Create.cshtml" />
+    <Content Include="Views\Villes\Delete.cshtml" />
+    <Content Include="Views\Villes\Details.cshtml" />
+    <Content Include="Views\Villes\Edit.cshtml" />
+    <Content Include="Views\Villes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

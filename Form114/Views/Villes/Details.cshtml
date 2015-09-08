@@ -1,0 +1,58 @@
+﻿@model DataLayer.Models.Villes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Villes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.district)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.district)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.population)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.population)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isCapital)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isCapital)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pays.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pays.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idVille }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -6,49 +6,14 @@
 
 @section scripts {
     <script src="~/Scripts/Home/VuesPartielles.js"></script>
-<script>
-    $(function () {
-        $('#3').click(function () {
-            $("#Ville").val($('#3').attr("href").substring(1))
-            $("#Region").val('')
-            $("#Pays").val('')
-            //alert($("#Ville").val());
-            $("#TT").submit()
-        });
-        $('#1').click(function () {
-            $("#Region").val($('#1').attr("href").substring(1))
-            $("#Pays").val('')
-            $("#Ville").val('')
-            //alert($("#Ville").val());
-            $("#TT").submit()
-        });
-        $('#2').click(function () {
-            $("#Pays").val($('#2').attr("href").substring(1))
-            $("#Region").val('')
-            $("#Ville").val('')
-            //alert($("#Pays").val());
-            $("#TT").submit()
-        });
-    });
-</script>
-
 }
 
 <h2>Resultats de votre recherche</h2>
 
-@using (Html.BeginForm("Result", "Search", FormMethod.Post, new { id = "TT" }))
+@foreach (BreadCrumbItem BCI in (List<BreadCrumbItem>)ViewBag.BreadCrumb)
 {
-    var i = 0;
-    <input type="hidden" id="Ville" name="Ville" value="" />
-    <input type="hidden" id="Region" name="Region" value="" />
-    <input type="hidden" id="Pays" name="Pays" value="" />
-    foreach (BreadCrumbItem BCI in (List<BreadCrumbItem>)ViewBag.BreadCrumb)
-    {
-        i++;
-        <a id="@i" href="#@BCI.Id">@BCI.text</a>
-        <text> >> </text>
-    }
-    //@Html.ActionLink(BCI.text, BCI.routeAction, BCI.routeController)
+    @Html.ActionLink(BCI.text, BCI.routeAction, new { controller = BCI.routeController, id = BCI.id });
+    <text> >> </text>
 }
 @*<table class="table table-hover table-striped table-bordered table-responsive">
     <thead>

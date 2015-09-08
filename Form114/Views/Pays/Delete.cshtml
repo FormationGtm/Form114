@@ -1,0 +1,120 @@
+﻿@model DataLayer.Models.Pays
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pays</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.surfacearea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.surfacearea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indepyear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indepyear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.population)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.population)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lifeexpectancy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lifeexpectancy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gnp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gnp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gnpold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gnpold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.localName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.localName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeIso2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeIso2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idgovform)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idgovform)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idheadofstate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idheadofstate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Regions.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Regions.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

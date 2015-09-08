@@ -48,6 +48,26 @@ namespace Form114.Controllers
             result = sb.GetResult().ToList();
             sb = new SearchOptionVille(sb, svm.Ville);
             result = sb.GetResult().OrderBy(p => p.IdProduit).ToList();
+
+            Villes ville = null;
+            Pays pays = null;
+            Regions region = null;
+            if (svm.Ville[0] != 0)
+            {
+                ville = _db.Villes.Find(svm.Ville[0]);
+                pays = _db.Villes.Find(ville.idVille).Pays;
+                region = _db.Pays.Find(pays.CodeIso3).Regions;
+            } else if (svm.Region != 0)
+            {
+                region = _db.Pays.Find(svm.Region).Regions;
+                pays = _db.Villes.Find(region.idRegion).Pays;
+            } else if (svm.Pays != null)
+            {
+                pays = _db.Villes.Find(svm.Pays).Pays;
+            }
+            BCI.Add(new BreadCrumbItem(region.name, "Index", "Regions", region.idRegion.ToString()));
+            BCI.Add(new BreadCrumbItem(pays.Name, "Index", "Pays", pays.CodeIso3));
+            BCI.Add(new BreadCrumbItem(ville.name, "Index", "Villes", ville.idVille.ToString()));
             ViewBag.PrixMini = svm.PrixMini;
             return View(result);
         }

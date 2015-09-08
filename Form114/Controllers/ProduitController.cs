@@ -79,12 +79,12 @@ namespace Form114.Controllers
                 ListPhotos = listePhotos,
                 Prix = (prix != null ? (int)prix : 0)
             };
-            var ville = _db.Produits.Find(id).Villes;            
-            var pays = _db.Villes.Find(ville.idVille).Pays;     
+            var ville = _db.Produits.Find(id).Villes;
+            var pays = _db.Villes.Find(ville.idVille).Pays;
             var region = _db.Pays.Find(pays.CodeIso3).Regions;
-            BCI.Add(new BreadCrumbItem(region.name, "Result", "Search", region.idRegion.ToString()));
-            BCI.Add(new BreadCrumbItem(pays.Name, "Result", "Search", pays.CodeIso3));
-            BCI.Add(new BreadCrumbItem(ville.name, "Result", "Search", ville.idVille.ToString()));
+            BCI.Add(new BreadCrumbItem(region.name, "Index", "Regions", region.idRegion.ToString()));
+            BCI.Add(new BreadCrumbItem(pays.Name, "Index", "Pays", pays.CodeIso3));
+            BCI.Add(new BreadCrumbItem(ville.name, "Index", "Villes", ville.idVille.ToString()));
             return View(pr);
         }
 
