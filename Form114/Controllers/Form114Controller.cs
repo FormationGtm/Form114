@@ -16,7 +16,6 @@ namespace Form114.Controllers
 
         public Form114Controller()
         {
-            BCI.Add(new BreadCrumbItem("Home", "", ""));
             ViewBag.BreadCrumb = BCI;
         }
 

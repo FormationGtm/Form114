@@ -45,13 +45,9 @@
             </div>
         </div>
     </div>
-    @*@foreach (BreadCrumbItem BCI in (List<BreadCrumbItem>)ViewBag.BreadCrumb)
-        {
-            @Html.ActionLink(BCI.text, BCI.routeAction, BCI.routeController)
-            <text> >> </text>
-        }*@
+   
     <div class="navbar" style="height:100%;width:100%;">
-
+        
         @RenderBody()
 
         <hr />

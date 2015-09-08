@@ -7,24 +7,23 @@ using System.Web;
 
 namespace Form114.Infrastructure.SearchProducts.Options
 {
-    internal class SearchOptionVille : SearchOption
+    internal class SearchOptionPays : SearchOption
     {
-        private readonly int[] _Ville;
+        private readonly string _pays;
 
         
 
-        public SearchOptionVille(SearchBase sb, int[] Ville):base(sb)
+        public SearchOptionPays(SearchBase sb, string pays):base(sb)
         {
-            _Ville = Ville;
+            _pays = pays;
         }
 
         public override IEnumerable<Produits> GetResult()
         {
             //return _Ville != null ? new Form114Entities().Produits.Where(p => p.IdVille == _Ville).OrderBy(p => p.IdProduit) : new Form114Entities().Produits.OrderBy();
-            // TODO : refaire après la mise a jour base de données sur la table Produits, prix ne pas être null
-            if (_Ville == null || _Ville[0] == 0)
+            if (_pays == "" || _pays == null)
                 return SearchBase.GetResult();
-            return SearchBase.GetResult().Where(p => _Ville.Contains(p.IdVille)).OrderBy(p => p.IdProduit);
+            return SearchBase.GetResult().Where(p => p.Villes.Pays.CodeIso3 == _pays);
         }
 
     }

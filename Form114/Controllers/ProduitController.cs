@@ -65,10 +65,10 @@ namespace Form114.Controllers
             };
             var ville = _db.Produits.Find(id).Villes;            
             var pays = _db.Villes.Find(ville.idVille).Pays;     
-            string nomRegion = _db.Pays.Find(pays.CodeIso3).Regions.name;
-            BCI.Add(new BreadCrumbItem(nomRegion, "Details", "Produit"));
-            BCI.Add(new BreadCrumbItem(pays.Name, "Details", "Produit"));
-            BCI.Add(new BreadCrumbItem(ville.name, "Details", "Produit"));
+            var region = _db.Pays.Find(pays.CodeIso3).Regions;
+            BCI.Add(new BreadCrumbItem(region.name, "Result", "Search", region.idRegion.ToString()));
+            BCI.Add(new BreadCrumbItem(pays.Name, "Result", "Search", pays.CodeIso3));
+            BCI.Add(new BreadCrumbItem(ville.name, "Result", "Search", ville.idVille.ToString()));
             return View(pr);
         }
 

@@ -20,7 +20,9 @@ namespace Form114.Infrastructure.SearchProducts.Options
 
         public override IEnumerable<Produits> GetResult()
         {
-            return _region != null ? SearchBase.GetResult().Where(p => p.Villes.Pays.Regions.idRegion == (int)_region).OrderBy(p => p.IdProduit) : SearchBase.GetResult().OrderBy(p => p.IdProduit);
+            if (_region == null || _region == 0)
+                return SearchBase.GetResult();
+            return SearchBase.GetResult().Where(p => p.Villes.Pays.Regions.idRegion == (int)_region);
         }
 
     }

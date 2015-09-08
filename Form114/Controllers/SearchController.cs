@@ -16,7 +16,6 @@ namespace Form114.Controllers
     {
         public SearchController()
         {
-            BCI.Add(new BreadCrumbItem("Search", "Index", "Search"));
         }
 
         // GET: Search
@@ -25,7 +24,7 @@ namespace Form114.Controllers
             ViewBag.listeVille = _db.Villes.ToList();
             var svm = new SearchViewModel();
             svm.Ville = new int[10];
-            
+
             return View(svm);
         }
 
@@ -39,25 +38,26 @@ namespace Form114.Controllers
             sb = new SearchOptionNombrePlaces(sb, svm.nbPlaces);
             sb = new SearchOptionPrixMini(sb, svm.PrixMini);
             sb = new SearchOptionDateDebut(sb, svm.DateDebut);
-            //sb = new SearchOptionRegion(sb, svm.Region);
+            sb = new SearchOptionPays(sb, svm.Pays);
+            sb = new SearchOptionRegion(sb, svm.Region);
             sb = new SearchOptionVille(sb, svm.Ville);
-            var result = sb.GetResult().ToList();
+            var result = sb.GetResult().OrderBy(p => p.IdProduit).ToList();
             ViewBag.PrixMini = svm.PrixMini;
-            //int regionId = _db.Villes.Where(v => v.idVille == svm.Ville[0]).Select(v => v.Pays.idRegion).FirstOrDefault();
-            //string paysId = _db.Pays.Where(p => p.Regions.idRegion == regionId).Select(p => p.CodeIso3).FirstOrDefault();
-            //BCI.Add(new BreadCrumbItem("@regionId", "Result", "Search"));
             return View(result);
         }
 
         [HttpPost]
-        public ActionResult ResultRegion(int id)
+        public void ResultRegion(int id)
         {
-            SearchBase sb = new Search();
-            string NomRegion = _db.Regions.Find(id).name;
-            sb = new SearchOptionRegion(sb, id);
-            var result = sb.GetResult().ToList();
-            BCI.Add(new BreadCrumbItem( NomRegion, "Result", "Search"));
-            return View("Result",result);
+            //SearchBase sb = new Search();
+            //string NomRegion = _db.Regions.Find(id).name;
+            //sb = new SearchOptionRegion(sb, id);
+            //var result = sb.GetResult().ToList();
+            var svm = new SearchViewModel()
+            {
+                Region = id
+            };
+            RedirectToAction("Result",svm);
         }
 
         public JsonResult ListeVille()
@@ -69,7 +69,7 @@ namespace Form114.Controllers
 
         public JsonResult ListeVille1(string id)
         {
-            var lV = _db.Villes.Where( v => v.Pays.CodeIso3 == id).OrderBy(v => v.name).Select(v => new { id = v.idVille, name = v.name });
+            var lV = _db.Villes.Where(v => v.Pays.CodeIso3 == id).OrderBy(v => v.name).Select(v => new { id = v.idVille, name = v.name });
             var liste = lV.ToList();
             return Json(lV, JsonRequestBehavior.AllowGet);
         }

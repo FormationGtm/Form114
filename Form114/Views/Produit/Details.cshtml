@@ -18,6 +18,32 @@
     <script src="~/Scripts/Comments/jquery.comment.js"></script>
     <link href="~/Content/jquery-ui.css" rel="stylesheet" />
     <link href="~/Content/Comments/jquery.comment.css" rel="stylesheet" />
+
+    <script>
+        $(function () {
+            $('#3').click(function () {
+                $("#Ville").val($('#3').attr("href").substring(1))
+                $("#Region").val('')
+                $("#Pays").val('')
+                //alert($("#Ville").val());
+                $("#TT").submit()
+            });
+            $('#1').click(function () {
+                $("#Region").val($('#1').attr("href").substring(1))
+                $("#Pays").val('')
+                $("#Ville").val('')
+                //alert($("#Ville").val());
+                $("#TT").submit()
+            });
+            $('#2').click(function () {
+                $("#Pays").val($('#2').attr("href").substring(1))
+                $("#Region").val('')
+                $("#Ville").val('')
+                //alert($("#Pays").val());
+                $("#TT").submit()
+            });
+        });
+    </script>
 }
 
 @{
@@ -26,6 +52,21 @@
     {
         s += 's';
     }
+}
+
+@using (Html.BeginForm("Result", "Search", FormMethod.Post, new { id = "TT" }))
+{
+    var i = 0;
+    <input type="hidden" id="Ville" name="Ville" value="" />
+    <input type="hidden" id="Region" name="Region" value="" />
+    <input type="hidden" id="Pays" name="Pays" value="" />
+    foreach (BreadCrumbItem BCI in (List<BreadCrumbItem>)ViewBag.BreadCrumb)
+    {
+        i++;
+        <a id="@i" href="#@BCI.Id">@BCI.text</a>
+        <text> >> </text> 
+    }
+    //@Html.ActionLink(BCI.text, BCI.routeAction, BCI.routeController)
 }
 
 @Html.MyCarousel(Model.ListPhotos, Model.IdProduit, "cadre", "MonImage")

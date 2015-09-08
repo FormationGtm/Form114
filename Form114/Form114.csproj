@@ -199,6 +199,7 @@
     <Compile Include="Infrastructure\SearchProducts\Options\SearchOptionNombrePlaces.cs" />
     <Compile Include="Infrastructure\SearchProducts\Options\SearchOptionPrixMini.cs" />
     <Compile Include="Infrastructure\SearchProducts\Options\SearchOptionRegion.cs" />
+    <Compile Include="Infrastructure\SearchProducts\Options\SearchOptionPays.cs" />
     <Compile Include="Infrastructure\SearchProducts\Options\SearchOptionVille.cs" />
     <Compile Include="Infrastructure\SearchProducts\Search.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
