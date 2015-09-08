@@ -24,7 +24,7 @@ namespace Form114.Infrastructure.SearchProducts.Options
             // TODO : refaire après la mise a jour base de données sur la table Produits, prix ne pas être null.
             List<Produits> listeDeProduitsDateDebut = new List<Produits>();
             var _db = new Form114Entities();
-            var lDate = _db.Prix.Where(p => p.DateDebut >= _Debut).ToList();
+            var lDate = _db.Prix.Where(p => p.DateDebut <= _Debut && p.DateFin >= _Debut).ToList();
             foreach (var item in lDate)
             {
                 var list = SearchBase.GetResult().Where(p => p.IdProduit == item.IdProduit);

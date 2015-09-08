@@ -6,11 +6,51 @@
 
 @section scripts {
     <script src="~/Scripts/Home/VuesPartielles.js"></script>
+<script>
+    $(function () {
+        $('#3').click(function () {
+            $("#Ville").val($('#3').attr("href").substring(1))
+            $("#Region").val('')
+            $("#Pays").val('')
+            //alert($("#Ville").val());
+            $("#TT").submit()
+        });
+        $('#1').click(function () {
+            $("#Region").val($('#1').attr("href").substring(1))
+            $("#Pays").val('')
+            $("#Ville").val('')
+            //alert($("#Ville").val());
+            $("#TT").submit()
+        });
+        $('#2').click(function () {
+            $("#Pays").val($('#2').attr("href").substring(1))
+            $("#Region").val('')
+            $("#Ville").val('')
+            //alert($("#Pays").val());
+            $("#TT").submit()
+        });
+    });
+</script>
+
 }
 
 <h2>Resultats de votre recherche</h2>
 
-<table class="table table-hover table-striped table-bordered table-responsive">
+@using (Html.BeginForm("Result", "Search", FormMethod.Post, new { id = "TT" }))
+{
+    var i = 0;
+    <input type="hidden" id="Ville" name="Ville" value="" />
+    <input type="hidden" id="Region" name="Region" value="" />
+    <input type="hidden" id="Pays" name="Pays" value="" />
+    foreach (BreadCrumbItem BCI in (List<BreadCrumbItem>)ViewBag.BreadCrumb)
+    {
+        i++;
+        <a id="@i" href="#@BCI.Id">@BCI.text</a>
+        <text> >> </text>
+    }
+    //@Html.ActionLink(BCI.text, BCI.routeAction, BCI.routeController)
+}
+@*<table class="table table-hover table-striped table-bordered table-responsive">
     <thead>
         <tr>
             <th>Ville</th>
@@ -34,20 +74,15 @@
         }
     </tbody>
 
-</table>
+</table>*@
 
-@*<div style="background-color : #5D8CAE; padding:25px;">
+<div style="background-color : #5D8CAE; padding:25px;">
     <div class="row center-block">
         @foreach (var item in Model)
         {
 
-            //<div class="col-sm-8">@Html.Action("Maxiature", "Produit", new { id = item.IdProduit })</div>
+            <div class="col-sm-8">@Html.Action("Maxiature", "Produit", new { id = item.IdProduit })</div>
 
         }
-        @foreach (BreadCrumbItem BCI in (List<BreadCrumbItem>)ViewBag.BreadCrumb)
-        {
-            @Html.ActionLink(BCI.text, BCI.routeAction, BCI.routeController)
-            <text> >> </text>
-        }
     </div>
-</div>*@
+</div>
