@@ -5,52 +5,14 @@
 }
 
 @section scripts{
-    <script src="~/Scripts/jquery-2.1.4.js"></script>
     <script src="~/Scripts/Home/VuesPartielles.js"></script>
+    <script src="~/Scripts/Autocomplete/bootstrap3-typeahead.js"></script>
     <script src="~/Scripts/Modified/jquery-ui.js"></script>
     <script src="~/Scripts/bootstrap-datepicker.fr.js"></script>
     <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
     <script src="~/Scripts/Search/ListeVille.js"></script>
-    <script>
-        $(function () {
-            $("#from").datepicker1({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 1,
-                onClose: function (selectedDate) {
-                    $("#to").datepicker1("option", "minDate", selectedDate);
-                }
-            });
-            $("#from").datepicker1("option", "dateFormat", "dd/mm/yy");
-            $("#to").datepicker1({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 1,
-                language: "fr",
-                onClose: function (selectedDate) {
-                    $("#from").datepicker1("option", "maxDate", selectedDate);
-                }
-            });
-            $("#to").datepicker1("option", "dateFormat", "dd/mm/yy");
-        });
-    </script>
-    <script>
-        $(function () {
-            var availableTags = [""];
-            $.getJSON("/Search/ListeVille3", function (data) {
-                $.each(data, function (idx, item) {
-
-                    availableTags.push(item.name.trim());
-                });
-            });
-
-            //alert(availableTags);
-            $("#tags").autocomplete({
-                source: availableTags
-            });
-        });
-
-    </script>
+    <script src="~/Scripts/Search/Datepicker.js"></script>
+    <script src="~/Scripts/Search/Autocomplete.js"></script>
 }
 
 @section styles{
@@ -67,6 +29,7 @@
 @*#Orange : #F5D76E, BlEU Trurquoi: #89C4F4, Violet : #BE90D4 || Trois Couleur*@
 @using (Html.BeginForm("Result", "Search"))
 {
+    <input type="hidden" id="Ville" name="Ville" value="" />
 
     <div id="head" style="height:100%;">
         <div id="cont">
@@ -119,16 +82,18 @@
                                 <span class="input-placeholder-label screen-reader-only">Arrivée</span>
 
                                 <div class="ui-widget">
-                                    <input type="text" name="NomVille" id="tags" placeholder="Où voulez-vous aller ?">
+                                    @*<input type="text" id="tags" value="label" placeholder="Où voulez-vous aller ?">*@
+                                        
+                                    <input type="text" id="typeahead">
                                 </div>
                             </label>
                             <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
                                 <span class="screen-reader-only">Départ?</span>
-                                <input id="from" name="DateDebut" type="text" placeholder="Départ?" />
+                                <input id="datepicker" name="DateDebut" type="text" placeholder="Départ?" />
                             </label>
                             <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
                                 <span class="screen-reader-only">Fin?</span>
-                                <input id="to" name="DateFin" type="text" placeholder="Fin?" />
+                                <input id="datepicker1" name="DateFin" type="text" placeholder="Fin?" />
                             </label>
                         </span>
                         <label class="searchbar__guests">
@@ -163,7 +128,7 @@
 
     </div>
 
- 
+
 }
 
 <div class="center-block" style="background-color : #ffffff ; padding:25px;">

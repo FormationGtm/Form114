@@ -55,7 +55,8 @@
             $.getJSON("/Search/ListeVille3", function (data) {
                 $.each(data, function (idx, item) {
 
-                    availableTags.push(item.name.trim());
+                    var obj = {label:item.name.trim(),value:item.id}
+                    availableTags.push(obj);
                 });
             });
 

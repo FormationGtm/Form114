@@ -1,12 +1,12 @@
 ﻿var array = []
 
 $(function () {
-    $('#datepicker').datepicker({
+    $('#datepicker').datepicker1({
         beforeShowDay: excludeDates,
         language: "fr"
     })
 
-    $('#datepicker1').datepicker({
+    $('#datepicker1').datepicker1({
         beforeShowDay: excludeDates,
         language: "fr"
     })
@@ -21,6 +21,6 @@ $(function () {
 });
 
 function excludeDates(date) {
-    var string = jQuery.datepicker.formatDate('m/d/yy', date);
+    var string = jQuery.datepicker1.formatDate('m/d/yy', date);
     return [$.inArray(string,array) == -1]
 };
