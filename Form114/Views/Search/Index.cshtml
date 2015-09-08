@@ -20,53 +20,15 @@
 
 @section scripts{
     <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/Autocomplete/bootstrap3-typeahead.js"></script>
     <script src="~/Scripts/Search/Slider.js"></script>
+    <script src="~/Scripts/Search/Datepicker.js"></script>
     <script src="~/Scripts/Home/VuesPartielles.js"></script>
     <script src="~/Scripts/Modified/jquery-ui.js"></script>
+    <script src="~/Scripts/Search/Autocomplete.js"></script>
     <script src="~/Scripts/bootstrap-datepicker.fr.js"></script>
     <script src="http://harvesthq.github.io/chosen/chosen.jquery.js"></script>
     <script src="~/Scripts/Search/ListeVille.js"></script>
-    <script>
-        $(function () {
-            $("#from").datepicker1({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 1,
-                onClose: function (selectedDate) {
-                    $("#to").datepicker1("option", "minDate", selectedDate);
-                }
-            });
-            $("#from").datepicker1("option", "dateFormat", "dd/mm/yy");
-            $("#to").datepicker1({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 1,
-                language: "fr",
-                onClose: function (selectedDate) {
-                    $("#from").datepicker1("option", "maxDate", selectedDate);
-                }
-            });
-            $("#to").datepicker1("option", "dateFormat", "dd/mm/yy");
-        });
-    </script>
-    <script>
-        $(function () {
-            var availableTags = [""];
-            $.getJSON("/Search/ListeVille3", function (data) {
-                $.each(data, function (idx, item) {
-
-                    var obj = {label:item.name.trim(),value:item.id}
-                    availableTags.push(obj);
-                });
-            });
-
-            //alert(availableTags);
-            $("#tags").autocomplete({
-                source: availableTags
-            });
-        });
-
-    </script>
 }
 
 

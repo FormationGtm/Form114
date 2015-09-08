@@ -3,6 +3,7 @@
 
 @using (Html.BeginForm("Result", "Search"))
 {
+    <input type="hidden" id="Ville" name="Ville" value="" />
     <div class="row center-block form-horizontal form-inline" style="background-color:#89C4F4; height:200px; max-width:100%; padding:25px; opacity:0.89">
 
         <div class="col-xs-6 left" style="vertical-align:middle; float:left;">
@@ -20,16 +21,16 @@
                                     <span class="input-placeholder-label screen-reader-only">Arrivée</span>
 
                                     <div class="ui-widget">
-                                        <input type="text" name="Ville" id="tags" placeholder="Où voulez-vous aller ?">
+                                        <input type="text" id="typeahead">
                                     </div>
                                 </label>
                                 <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
                                     <span class="screen-reader-only">Départ?</span>
-                                    <input id="from" name="DateDebut" type="text" placeholder="Départ?" />
+                                    <input id="datepicker" name="DateDebut" type="text" placeholder="Départ?" />
                                 </label>
                                 <label class="searchbar__checkin" style="width:193px;text-decoration-color: #BE90D4;">
                                     <span class="screen-reader-only">Fin?</span>
-                                    <input id="to" name="DateFin" type="text" placeholder="Fin?" />
+                                    <input id="datepicker1" name="DateFin" type="text" placeholder="Fin?" />
                                 </label>
                             </span>
                             <label class="searchbar__guests">

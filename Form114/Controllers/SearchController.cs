@@ -36,12 +36,18 @@ namespace Form114.Controllers
             SearchBase sb = new Search();
 
             sb = new SearchOptionNombrePlaces(sb, svm.nbPlaces);
-            sb = new SearchOptionPrixMini(sb, svm.PrixMini);
-            sb = new SearchOptionDateDebut(sb, svm.DateDebut);
-            sb = new SearchOptionPays(sb, svm.Pays);
-            sb = new SearchOptionRegion(sb, svm.Region);
-            sb = new SearchOptionVille(sb, svm.Ville);
             var result = sb.GetResult().OrderBy(p => p.IdProduit).ToList();
+            sb = new SearchOptionPrixMini(sb, svm.PrixMini);
+            result = sb.GetResult().ToList();
+            if (DateTime.Compare(svm.DateDebut, DateTime.Now)>0)
+                sb = new SearchOptionDateDebut(sb, svm.DateDebut);
+            result = sb.GetResult().ToList();
+            sb = new SearchOptionPays(sb, svm.Pays);
+            result = sb.GetResult().ToList();
+            sb = new SearchOptionRegion(sb, svm.Region);
+            result = sb.GetResult().ToList();
+            sb = new SearchOptionVille(sb, svm.Ville);
+            result = sb.GetResult().OrderBy(p => p.IdProduit).ToList();
             ViewBag.PrixMini = svm.PrixMini;
             return View(result);
         }

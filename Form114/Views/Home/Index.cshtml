@@ -13,7 +13,10 @@
     <script src="~/Scripts/Search/ListeVille.js"></script>
     <script src="~/Scripts/Search/Datepicker.js"></script>
     <script src="~/Scripts/Search/Autocomplete.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
 }
+
+
 
 @section styles{
     <link href="~/Content/Site.css" rel="stylesheet" />
@@ -83,7 +86,7 @@
 
                                 <div class="ui-widget">
                                     @*<input type="text" id="tags" value="label" placeholder="Où voulez-vous aller ?">*@
-                                        
+
                                     <input type="text" id="typeahead">
                                 </div>
                             </label>
@@ -127,8 +130,6 @@
         </div>
 
     </div>
-
-
 }
 
 <div class="center-block" style="background-color : #ffffff ; padding:25px;">
@@ -158,6 +159,7 @@
         @foreach (var item in (List<DataLayer.Models.Regions>
                     )ViewBag.listRegions)
         {
+
             <div class="col-xs-3">
                 @Html.Action("Catalog", "Home", new { id = item.idRegion })
             </div>
