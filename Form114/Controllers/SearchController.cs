@@ -52,7 +52,7 @@ namespace Form114.Controllers
             Villes ville = null;
             Pays pays = null;
             Regions region = null;
-            if (svm.Ville[0] != 0)
+            if (svm.Ville != null && svm.Ville[0] != 0)
             {
                 ville = _db.Villes.Find(svm.Ville[0]);
                 pays = _db.Villes.Find(ville.idVille).Pays;

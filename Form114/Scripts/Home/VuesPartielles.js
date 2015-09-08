@@ -5,9 +5,7 @@
     })
 
     $('.FormSubmitButton').click(function () {
-        console.log($(this).find('#IdRegion').val())
-        //$('#idCurrentPage').val($(this).html());
-        $(this).find('#IdFormPagination').submit();
+        window.location = '../Regions/Index/' + $(this).find('#IdRegion').val();
         return false;
     });
 })

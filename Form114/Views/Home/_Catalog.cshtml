@@ -5,33 +5,27 @@
 }
 
 <div class="FormSubmitButton" id="myForm">
-    @using (Html.BeginForm("Result", "Search", FormMethod.Post, new { id = "IdFormPagination" }))
-    {
 
+    <input type="hidden" id="IdRegion" name="Region" value="@Model.idRegion" />
 
-        <input type="hidden" id="IdRegion" name="Region" value="@Model.idRegion" />
+    <div class=" rm-padding-sm" style="height:200px;">
+        <div class="catalog" style="height:100%">
 
-        <div class=" rm-padding-sm" style="height:200px;">
-            <div class="catalog" style="height:100%">
-
-                <div class="discovery-card rm-padding-sm row-space-4 darken-on-hover catalog1" style="height:200px; background-image : url(@strImage)">
-                    <a class="link-reset" href="#">
-                        <div class="va-container va-container-v va-container-h">
-                            <div class="va-middle text-center text-contrast">
-                                <div class="h3">
-                                    @Model.name
-                                </div>
+            <div class="discovery-card rm-padding-sm row-space-4 darken-on-hover catalog1" style="height:200px; background-image : url(@strImage)">
+                <a class="link-reset" href="#">
+                    <div class="va-container va-container-v va-container-h">
+                        <div class="va-middle text-center text-contrast">
+                            <div class="h3">
+                                @Model.name
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                </div>
             </div>
-
         </div>
 
-    }
-
+    </div>
 </div>
 
 
